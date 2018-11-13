@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/sp_pc_2018.dir/main.c.o CMakeFiles/sp_pc_2018.dir/trie.c.o CMakeFiles/sp_pc_2018.dir/lcs.c.o  -o sp_pc_2018 
