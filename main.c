@@ -1,6 +1,7 @@
 #include "library.h"
 #include "trie.h"
 #include "lcs.h"
+#include "LinkedList.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -12,13 +13,23 @@
 int min_delka_korene;
 int min_pocet_vyskytu_korenu;
 Trie *trie;
+List *current, *head;
+
+int numbers_only(const char *s)
+{
+    while (*s) {
+        if (isdigit(*s++) == 0) return 0;
+    }
+    return 1;
+}
 
 int main(int argc, char *argv[]) {
 
-    trie = trie_initialize();
-
     char* regex;
     char* file_path_regrex;
+
+    trie = trie_initialize();
+    //compare_strings(head);
 
     file_path_regrex = "(\\\\?([^\\/]*[\\/])*)([^\\/]+)$";
 
@@ -37,7 +48,8 @@ int main(int argc, char *argv[]) {
             printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
             printf("+====================================================================================+\n");
             create_dictionary(argv[1]);
-            create_stems_dictionary(min_delka_korene);
+            //create_words_array();
+            //create_stems_dictionary(min_delka_korene);
         } else {                                    /* URCENI KORENU */
             printf("%s \nDefault -msf=10\n", argv[1]);
             // Nastaveni parametru -msf=10
@@ -62,6 +74,7 @@ int main(int argc, char *argv[]) {
             }
             else {                                  /* Spatny parametr -msl */
                 using();
+                destroy(head);
                 free_t(trie);
                 return EXIT_FAILURE;
             }
@@ -83,6 +96,7 @@ int main(int argc, char *argv[]) {
             }
             else {                                  /* Spatny parametr -msf */
                 using();
+                destroy(head);
                 free_t(trie);
                 return EXIT_FAILURE;
             }
@@ -97,9 +111,11 @@ int main(int argc, char *argv[]) {
         }
     } else {
         using();
+        destroy(head);
         free_t(trie);
         return EXIT_FAILURE;
     }
+    destroy(head);
     free_t(trie);
     return EXIT_SUCCESS;
 }
@@ -135,7 +151,7 @@ void create_test_trie () {
 
     printf("\n");
 
-    display(fp, trie->root, str, level);
+    // display(fp, trie->root, str, level);
     free_t(trie);
     fclose(fp);
 }
@@ -172,7 +188,6 @@ void create_dictionary(char *corpus_file_path) {
         word = strtok(line, " ");
         while (word != NULL)
         {
-            //if (word == '\n');
             if (strcmp(word, "\n") == 0) {
                 word = strtok (NULL, " ");
                 continue;
@@ -225,47 +240,17 @@ int match(char *string, char *pattern)
 }
 
 void create_stems_dictionary(int min_delka_korene) {
-    Trie *stems;
-    char array[trie->count];
-    int i, j;
-    FILE *fp;      // File to write
-    char *str1 = (char *) malloc(sizeof(str1));
-    char *str2 = (char *) malloc(sizeof(str2));
 
-    // Open file
-    fp = fopen("/home/janelle/CLionProjects/sp_pc_2018/output/stems.txt", "w");
-    if (fp == NULL)
-    {
-        perror("Error opening file!");
-        exit(1);
-    }
+    Trie *stems;
 
     stems = trie_initialize();
-    create_words_array(array);
-
-    for (i = 0; i < sizeof(array) / sizeof(char); i++) {
-        for (j = 0; j < sizeof(array) / sizeof(char); j++) {
-            if (i == j) continue;
-            strcpy(str1, &array[i]);
-            strcpy(str2, &array[j]);
-            find_lcs(str1, str2, sizeof(str1), sizeof(str2), min_delka_korene, stems);
-        }
-    }
-
-    int level = 0;
-    char str[20];
-    display(fp, stems->root, str, level);
-
-    fclose(fp);
+    compare_strings(head, min_delka_korene);
     free_t(stems);
-    free(str1);
-    free(str2);
 }
 
-void create_words_array(char *array) {
-    int i = 0;
-    char * line = NULL;
-    char * word;
+void create_words_array() {
+    char *line = NULL;
+    char *word;
     size_t len = 0;
     ssize_t read;
     FILE *fp;       // File to read
@@ -279,21 +264,35 @@ void create_words_array(char *array) {
     }
 
     // read line by line
-    while ((read = getline(&line, &len, fp)) != -1) {
+    while ((read = getline(&line, &len, fp)) != EOF) {
         // take words
         word = strtok(line, " ");
         while (word != NULL)
         {
+            str_clean(word);
+
+            if (strcmp(word, "") == 0){
+                word = strtok (NULL, " ");
+                continue;
+            }
             if (strcmp(word, "\n") == 0) {
                 word = strtok (NULL, " ");
                 continue;
             }
-
-            if (isdigit(word) == 1) {
+            if (numbers_only(word)) {
+                word = strtok (NULL, " ");
                 continue;
             }
-            strcpy(array[i], word);
-            i++;
+
+            List *node = malloc(sizeof(List));
+            node->string = strdup(line);
+            node->next =NULL;
+
+            if(head == NULL){
+                current = head = node;
+            } else {
+                current = current->next = node;
+            }
             word = strtok (NULL, " ");
         }
     }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "lcs.h"
 
-void find_lcs(char *X, char *Y, int XLen, int YLen, int min_delka_korene, Trie* trie) {
+void find_lcs(char *X, char *Y, int XLen, int YLen, int min_delka_korene) {
     int L[XLen + 1][YLen + 1];
     int r, c, i;
 
@@ -14,6 +14,7 @@ void find_lcs(char *X, char *Y, int XLen, int YLen, int min_delka_korene, Trie* 
                 L[r][c] = L[r - 1][c - 1] + 1;
             } else {
                 L[r][c] = max(L[r - 1][c], L[r][c - 1]);
+//                L[r][c] = min_delka_korene;
             }
         }
     }
@@ -46,10 +47,10 @@ void find_lcs(char *X, char *Y, int XLen, int YLen, int min_delka_korene, Trie* 
 
     }
 
-//    printf("Length of the LCS: %d\n", L[XLen][YLen]);
-//    printf("LCS: %s\n", LCS);
+    printf("Length of the LCS: %d\n", L[XLen][YLen]);
+    printf("LCS: %s\n", LCS);
     // Add LCS word to TRIE
-    insert(trie, LCS);
+    //insert(trie, LCS);
 }
 
 int max(int a, int b) {

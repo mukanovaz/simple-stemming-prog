@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug"/>
+				<Option working_dir="/home/janelle/Projects/kiv-pc/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug"/>
+				<Option working_dir="/home/janelle/Projects/kiv-pc/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug"/>
+				<Option working_dir="/home/janelle/Projects/kiv-pc/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sp_pc_2018">
-				<Option output="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/sp_pc_2018" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug"/>
+				<Option output="/home/janelle/Projects/kiv-pc/cmake-build-debug/sp_pc_2018" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/janelle/Projects/kiv-pc/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -51,15 +51,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 sp_pc_2018"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 sp_pc_2018"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="sp_pc_2018/fast">
-				<Option output="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/sp_pc_2018" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug"/>
+				<Option output="/home/janelle/Projects/kiv-pc/cmake-build-debug/sp_pc_2018" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/janelle/Projects/kiv-pc/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -71,32 +71,38 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 sp_pc_2018/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 sp_pc_2018/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/janelle/Projects/kiv-pc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/lcs.c">
+		<Unit filename="/home/janelle/Projects/kiv-pc/LinkedList.c">
 			<Option target="sp_pc_2018"/>
 		</Unit>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/lcs.h">
+		<Unit filename="/home/janelle/Projects/kiv-pc/LinkedList.h">
 			<Option target="sp_pc_2018"/>
 		</Unit>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/library.h">
+		<Unit filename="/home/janelle/Projects/kiv-pc/lcs.c">
 			<Option target="sp_pc_2018"/>
 		</Unit>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/main.c">
+		<Unit filename="/home/janelle/Projects/kiv-pc/lcs.h">
 			<Option target="sp_pc_2018"/>
 		</Unit>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/trie.c">
+		<Unit filename="/home/janelle/Projects/kiv-pc/library.h">
 			<Option target="sp_pc_2018"/>
 		</Unit>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/trie.h">
+		<Unit filename="/home/janelle/Projects/kiv-pc/main.c">
 			<Option target="sp_pc_2018"/>
 		</Unit>
-		<Unit filename="/home/janelle/CLionProjects/sp_pc_2018/CMakeLists.txt">
+		<Unit filename="/home/janelle/Projects/kiv-pc/trie.c">
+			<Option target="sp_pc_2018"/>
+		</Unit>
+		<Unit filename="/home/janelle/Projects/kiv-pc/trie.h">
+			<Option target="sp_pc_2018"/>
+		</Unit>
+		<Unit filename="/home/janelle/Projects/kiv-pc/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

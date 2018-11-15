@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/janelle/CLionProjects/sp_pc_2018/trie.c
+/home/janelle/Projects/kiv-pc/LinkedList.h
+
+/home/janelle/Projects/kiv-pc/trie.c
 trie.h
-/home/janelle/CLionProjects/sp_pc_2018/trie.h
+/home/janelle/Projects/kiv-pc/trie.h
 stdio.h
 -
 ctype.h
@@ -22,7 +24,9 @@ assert.h
 regex.h
 -
 
-/home/janelle/CLionProjects/sp_pc_2018/trie.h
+/home/janelle/Projects/kiv-pc/trie.h
 bits/types/FILE.h
 -
+LinkedList.h
+/home/janelle/Projects/kiv-pc/LinkedList.h
 

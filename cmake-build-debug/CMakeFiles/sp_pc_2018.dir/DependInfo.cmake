@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/janelle/CLionProjects/sp_pc_2018/lcs.c" "/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/lcs.c.o"
-  "/home/janelle/CLionProjects/sp_pc_2018/main.c" "/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/main.c.o"
-  "/home/janelle/CLionProjects/sp_pc_2018/trie.c" "/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/trie.c.o"
+  "/home/janelle/Projects/kiv-pc/LinkedList.c" "/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/LinkedList.c.o"
+  "/home/janelle/Projects/kiv-pc/lcs.c" "/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/lcs.c.o"
+  "/home/janelle/Projects/kiv-pc/main.c" "/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/main.c.o"
+  "/home/janelle/Projects/kiv-pc/trie.c" "/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/trie.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

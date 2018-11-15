@@ -16,6 +16,7 @@ int get_parameter_value(char *string);
 void create_dictionary(char *corpus_file_path);
 void create_stems_dictionary(int min_delka_korene);
 void find_stems(char *word_sequence, int msf_value);
-void create_words_array(char *array);
+void create_words_array();
 void create_test_trie();
+
 #endif //SP_PC_2018_LIBRARY_H

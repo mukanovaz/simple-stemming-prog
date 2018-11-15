@@ -48,10 +48,10 @@ RM = /home/janelle/programs/clion-2018.2.4/bin/cmake/linux/bin/cmake -E remove -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/janelle/CLionProjects/sp_pc_2018
+CMAKE_SOURCE_DIR = /home/janelle/Projects/kiv-pc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug
+CMAKE_BINARY_DIR = /home/janelle/Projects/kiv-pc/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles /home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ sp_pc_2018: cmake_check_build_system
 sp_pc_2018/fast:
 	$(MAKE) -f CMakeFiles/sp_pc_2018.dir/build.make CMakeFiles/sp_pc_2018.dir/build
 .PHONY : sp_pc_2018/fast
+
+LinkedList.o: LinkedList.c.o
+
+.PHONY : LinkedList.o
+
+# target to build an object file
+LinkedList.c.o:
+	$(MAKE) -f CMakeFiles/sp_pc_2018.dir/build.make CMakeFiles/sp_pc_2018.dir/LinkedList.c.o
+.PHONY : LinkedList.c.o
+
+LinkedList.i: LinkedList.c.i
+
+.PHONY : LinkedList.i
+
+# target to preprocess a source file
+LinkedList.c.i:
+	$(MAKE) -f CMakeFiles/sp_pc_2018.dir/build.make CMakeFiles/sp_pc_2018.dir/LinkedList.c.i
+.PHONY : LinkedList.c.i
+
+LinkedList.s: LinkedList.c.s
+
+.PHONY : LinkedList.s
+
+# target to generate assembly for a file
+LinkedList.c.s:
+	$(MAKE) -f CMakeFiles/sp_pc_2018.dir/build.make CMakeFiles/sp_pc_2018.dir/LinkedList.c.s
+.PHONY : LinkedList.c.s
 
 lcs.o: lcs.c.o
 
@@ -213,6 +240,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sp_pc_2018"
+	@echo "... LinkedList.o"
+	@echo "... LinkedList.i"
+	@echo "... LinkedList.s"
 	@echo "... lcs.o"
 	@echo "... lcs.i"
 	@echo "... lcs.s"

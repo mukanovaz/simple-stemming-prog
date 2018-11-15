@@ -2,6 +2,7 @@
 #define SP_PC_2018_TRIE_H
 
 #include <bits/types/FILE.h>
+#include "LinkedList.h"
 /* ========================================= CONSTANTS ========================================= */
 #define ALPHA_SIZE 256
 

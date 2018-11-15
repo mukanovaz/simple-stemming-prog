@@ -43,10 +43,10 @@ RM = /home/janelle/programs/clion-2018.2.4/bin/cmake/linux/bin/cmake -E remove -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/janelle/CLionProjects/sp_pc_2018
+CMAKE_SOURCE_DIR = /home/janelle/Projects/kiv-pc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug
+CMAKE_BINARY_DIR = /home/janelle/Projects/kiv-pc/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sp_pc_2018.dir/depend.make
@@ -59,48 +59,62 @@ include CMakeFiles/sp_pc_2018.dir/flags.make
 
 CMakeFiles/sp_pc_2018.dir/main.c.o: CMakeFiles/sp_pc_2018.dir/flags.make
 CMakeFiles/sp_pc_2018.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sp_pc_2018.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/main.c.o   -c /home/janelle/CLionProjects/sp_pc_2018/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sp_pc_2018.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/main.c.o   -c /home/janelle/Projects/kiv-pc/main.c
 
 CMakeFiles/sp_pc_2018.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sp_pc_2018.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/CLionProjects/sp_pc_2018/main.c > CMakeFiles/sp_pc_2018.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/Projects/kiv-pc/main.c > CMakeFiles/sp_pc_2018.dir/main.c.i
 
 CMakeFiles/sp_pc_2018.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sp_pc_2018.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/CLionProjects/sp_pc_2018/main.c -o CMakeFiles/sp_pc_2018.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/Projects/kiv-pc/main.c -o CMakeFiles/sp_pc_2018.dir/main.c.s
 
 CMakeFiles/sp_pc_2018.dir/trie.c.o: CMakeFiles/sp_pc_2018.dir/flags.make
 CMakeFiles/sp_pc_2018.dir/trie.c.o: ../trie.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/sp_pc_2018.dir/trie.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/trie.c.o   -c /home/janelle/CLionProjects/sp_pc_2018/trie.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/sp_pc_2018.dir/trie.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/trie.c.o   -c /home/janelle/Projects/kiv-pc/trie.c
 
 CMakeFiles/sp_pc_2018.dir/trie.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sp_pc_2018.dir/trie.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/CLionProjects/sp_pc_2018/trie.c > CMakeFiles/sp_pc_2018.dir/trie.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/Projects/kiv-pc/trie.c > CMakeFiles/sp_pc_2018.dir/trie.c.i
 
 CMakeFiles/sp_pc_2018.dir/trie.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sp_pc_2018.dir/trie.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/CLionProjects/sp_pc_2018/trie.c -o CMakeFiles/sp_pc_2018.dir/trie.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/Projects/kiv-pc/trie.c -o CMakeFiles/sp_pc_2018.dir/trie.c.s
 
 CMakeFiles/sp_pc_2018.dir/lcs.c.o: CMakeFiles/sp_pc_2018.dir/flags.make
 CMakeFiles/sp_pc_2018.dir/lcs.c.o: ../lcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sp_pc_2018.dir/lcs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/lcs.c.o   -c /home/janelle/CLionProjects/sp_pc_2018/lcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sp_pc_2018.dir/lcs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/lcs.c.o   -c /home/janelle/Projects/kiv-pc/lcs.c
 
 CMakeFiles/sp_pc_2018.dir/lcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sp_pc_2018.dir/lcs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/CLionProjects/sp_pc_2018/lcs.c > CMakeFiles/sp_pc_2018.dir/lcs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/Projects/kiv-pc/lcs.c > CMakeFiles/sp_pc_2018.dir/lcs.c.i
 
 CMakeFiles/sp_pc_2018.dir/lcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sp_pc_2018.dir/lcs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/CLionProjects/sp_pc_2018/lcs.c -o CMakeFiles/sp_pc_2018.dir/lcs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/Projects/kiv-pc/lcs.c -o CMakeFiles/sp_pc_2018.dir/lcs.c.s
+
+CMakeFiles/sp_pc_2018.dir/LinkedList.c.o: CMakeFiles/sp_pc_2018.dir/flags.make
+CMakeFiles/sp_pc_2018.dir/LinkedList.c.o: ../LinkedList.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/sp_pc_2018.dir/LinkedList.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sp_pc_2018.dir/LinkedList.c.o   -c /home/janelle/Projects/kiv-pc/LinkedList.c
+
+CMakeFiles/sp_pc_2018.dir/LinkedList.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sp_pc_2018.dir/LinkedList.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/janelle/Projects/kiv-pc/LinkedList.c > CMakeFiles/sp_pc_2018.dir/LinkedList.c.i
+
+CMakeFiles/sp_pc_2018.dir/LinkedList.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sp_pc_2018.dir/LinkedList.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/janelle/Projects/kiv-pc/LinkedList.c -o CMakeFiles/sp_pc_2018.dir/LinkedList.c.s
 
 # Object files for target sp_pc_2018
 sp_pc_2018_OBJECTS = \
 "CMakeFiles/sp_pc_2018.dir/main.c.o" \
 "CMakeFiles/sp_pc_2018.dir/trie.c.o" \
-"CMakeFiles/sp_pc_2018.dir/lcs.c.o"
+"CMakeFiles/sp_pc_2018.dir/lcs.c.o" \
+"CMakeFiles/sp_pc_2018.dir/LinkedList.c.o"
 
 # External object files for target sp_pc_2018
 sp_pc_2018_EXTERNAL_OBJECTS =
@@ -108,9 +122,10 @@ sp_pc_2018_EXTERNAL_OBJECTS =
 sp_pc_2018: CMakeFiles/sp_pc_2018.dir/main.c.o
 sp_pc_2018: CMakeFiles/sp_pc_2018.dir/trie.c.o
 sp_pc_2018: CMakeFiles/sp_pc_2018.dir/lcs.c.o
+sp_pc_2018: CMakeFiles/sp_pc_2018.dir/LinkedList.c.o
 sp_pc_2018: CMakeFiles/sp_pc_2018.dir/build.make
 sp_pc_2018: CMakeFiles/sp_pc_2018.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable sp_pc_2018"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable sp_pc_2018"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sp_pc_2018.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +138,6 @@ CMakeFiles/sp_pc_2018.dir/clean:
 .PHONY : CMakeFiles/sp_pc_2018.dir/clean
 
 CMakeFiles/sp_pc_2018.dir/depend:
-	cd /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/janelle/CLionProjects/sp_pc_2018 /home/janelle/CLionProjects/sp_pc_2018 /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug /home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/janelle/Projects/kiv-pc/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/janelle/Projects/kiv-pc /home/janelle/Projects/kiv-pc /home/janelle/Projects/kiv-pc/cmake-build-debug /home/janelle/Projects/kiv-pc/cmake-build-debug /home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/sp_pc_2018.dir/depend
 

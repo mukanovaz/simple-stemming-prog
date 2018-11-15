@@ -1,4 +1,4 @@
-# Install script for directory: /home/janelle/CLionProjects/sp_pc_2018
+# Install script for directory: /home/janelle/Projects/kiv-pc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/janelle/CLionProjects/sp_pc_2018/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/janelle/Projects/kiv-pc/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
