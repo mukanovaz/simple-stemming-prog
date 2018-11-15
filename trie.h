@@ -38,5 +38,6 @@ Trie* trie_initialize();
 void lower_string(char *s);
 void str_clean (char* src);
 void cz_key_map(int cz_chars[15]);
+int letter_to_int(char letter);
 
 #endif //SP_PC_2018_TRIE_H

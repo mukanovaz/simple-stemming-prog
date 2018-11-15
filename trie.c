@@ -42,34 +42,27 @@ Word* get_new_trie_node()
 
 void insert(Trie* trie, char* str)
 {
-    char *tmp;
     Word* curr;
-    int cz_chars[15];
+    int index;
 
-    cz_key_map(cz_chars); // Get cz char map
     curr = trie->root;
 
-    // Check string
-    tmp = (char *) malloc(sizeof(tmp));
-    strncpy(tmp, str, sizeof(str));
-    lower_string(tmp);
-    str_clean(tmp);
-
-    if (strlen(tmp) < 1) {
-        free(tmp);
+    if (strlen(str) < 3) {
+        free(str);
         return;
     }
 
-    while (*tmp)
+    while (*str)
     {
+        index = (unsigned int) letter_to_int(*str);
         // create a new node if path doesn't exists
-        if (curr->character[*tmp - 'a'] == NULL) {
-            curr->character[*tmp - 'a'] = get_new_trie_node();
+        if (curr->character[index] == NULL) {
+            curr->character[index] = get_new_trie_node();
         }
         // go to next node
-        curr = curr->character[*tmp - 'a'];
+        curr = curr->character[index];
         // move to next character
-        tmp++;
+        str++;
     }
 
     trie->count++;
@@ -79,6 +72,7 @@ void insert(Trie* trie, char* str)
 
 Word* search(Trie* trie, char* str)
 {
+    int index;
     Word* curr;
     // return 0 if Trie is empty
     if (trie == NULL)
@@ -93,8 +87,9 @@ Word* search(Trie* trie, char* str)
 
     while (*str)
     {
+        index = (unsigned int) letter_to_int(*str);
         // go to next node
-        curr = curr->character[*str - 'a'];
+        curr = curr->character[index];
 
         // if string is invalid (reached end of path in Trie)
         if (curr == NULL)
@@ -213,4 +208,17 @@ void cz_key_map(int cz_chars[15])
     cz_chars[-81] = 117;  // 'ů'
     cz_chars[-67] = 121;  // 'ý'
     cz_chars[-66] = 122;  // 'ž'
+}
+
+int letter_to_int(char letter)
+{
+    if (letter >= 'A' && letter <= 'Z')
+    {
+        return letter - 'A' + 26;
+    }
+    else if (letter >= 'a' && letter <= 'z')
+    {
+        return letter - 'a';
+    }
+    return -1;
 }

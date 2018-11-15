@@ -1,13 +1,15 @@
 #include "library.h"
 #include "trie.h"
-#include "lcs.h"
 #include "LinkedList.h"
+#include "lcs.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
 #include <regex.h>
+
+///home/janelle/Projects/kiv-pc/corpus-files/english.txt -msl=5
 
 /* Global variables */
 int min_delka_korene;
@@ -29,9 +31,7 @@ int main(int argc, char *argv[]) {
     char* file_path_regrex;
 
     trie = trie_initialize();
-    //compare_strings(head);
-
-    file_path_regrex = "(\\\\?([^\\/]*[\\/])*)([^\\/]+)$";
+    file_path_regrex = "(\\\\?([^\\/]*[\\/])*)([^\\/]+).txt$";
 
     /* Bez parametru -msl nebo -msf */
     if (argc == 2) {
@@ -48,8 +48,8 @@ int main(int argc, char *argv[]) {
             printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
             printf("+====================================================================================+\n");
             create_dictionary(argv[1]);
-            //create_words_array();
-            //create_stems_dictionary(min_delka_korene);
+            create_words_array();
+            create_stems_dictionary(min_delka_korene);
         } else {                                    /* URCENI KORENU */
             printf("%s \nDefault -msf=10\n", argv[1]);
             // Nastaveni parametru -msf=10
@@ -63,22 +63,9 @@ int main(int argc, char *argv[]) {
             find_stems(argv[1], min_pocet_vyskytu_korenu);
         }
     } else if (argc == 3) {
-                                                    /* UCENI STEMMERU */
-        if (match(argv[1], file_path_regrex) == 1) {
-            printf("%s \n%s\n", argv[1], argv[2]);
-
-            /* Kontrolovani parametru */
-            regex = "-(msl)=[1-9]+";
-            if (match(argv[2], regex) == 1) {       /* Spravny parametr -msl */
-                min_delka_korene = get_parameter_value(argv[2]);
-            }
-            else {                                  /* Spatny parametr -msl */
-                using();
-                destroy(head);
-                free_t(trie);
-                return EXIT_FAILURE;
-            }
-
+        if (match(argv[2], "-(msl)=[1-9]+") == 1) {
+            printf("%s \nDefault %s\n", argv[1], argv[2]);
+            min_delka_korene = get_parameter_value(argv[2]);
             printf("+====================================================================================+\n");
             printf("|================================= TRENOVANI KORENU =================================|\n");
             printf("|====================================================================================|\n");
@@ -86,21 +73,12 @@ int main(int argc, char *argv[]) {
             printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
             printf("+====================================================================================+\n");
             create_dictionary(argv[1]);
-        } else {                                    /* URCENI KORENU */
-            printf("\"%s\" \n%s\n", argv[1], argv[2]);
-
-            /* Kontrolovani parametru */
-            regex = "-(msf)=[1-9]+";
-            if (match(argv[2], regex) == 1) {       /* Spravny parametr -msf */
-                min_pocet_vyskytu_korenu = get_parameter_value(argv[2]);
-            }
-            else {                                  /* Spatny parametr -msf */
-                using();
-                destroy(head);
-                free_t(trie);
-                return EXIT_FAILURE;
-            }
-
+            create_words_array();
+            create_stems_dictionary(min_delka_korene);
+        } else if (match(argv[2], "-(msf)=[1-9]+")) {
+            printf("%s \nDefault -msf=10\n", argv[1]);
+            // Nastaveni parametru -msf=10
+            min_pocet_vyskytu_korenu = get_parameter_value(argv[2]);
             printf("+====================================================================================+\n");
             printf("|================================= URCOVANI KORENU ==================================|\n");
             printf("|====================================================================================|\n");
@@ -108,6 +86,11 @@ int main(int argc, char *argv[]) {
             printf(" [*] Minimum Stem Frequency: %d \n", min_pocet_vyskytu_korenu);
             printf("+====================================================================================+\n");
             find_stems(argv[1], min_pocet_vyskytu_korenu);
+        } else {
+            using();
+            destroy(head);
+            free_t(trie);
+            return EXIT_FAILURE;
         }
     } else {
         using();
@@ -115,70 +98,38 @@ int main(int argc, char *argv[]) {
         free_t(trie);
         return EXIT_FAILURE;
     }
-    destroy(head);
     free_t(trie);
     return EXIT_SUCCESS;
 }
 
-void create_test_trie () {
-    FILE *fp;
-    fp = fopen("/home/janelle/CLionProjects/sp_pc_2018/output/output.txt", "w");
-    if (fp == NULL)
-    {
-        printf("Error opening file!\n");
-        exit(1);
-    }
-
-    int level = 0;
-    char str[20];
-
-    insert(trie, "hello");
-    insert(trie, "HELLO");
-    insert(trie, "hell");
-    insert(trie, "heLlO");
-    insert(trie, "hello");
-    insert(trie, "o");
-    insert(trie, "lo");
-    insert(trie, "alo");
-    insert(trie, "hello");
-
-    if (search(trie, "hello") != NULL) {
-        Word* tmp = search(trie, "hello");
-        printf("Node hello Count: %d \n", tmp->count);
-    }
-
-    printf("Tries nodes count: %d\n", trie->count);
-
-    printf("\n");
-
-    // display(fp, trie->root, str, level);
-    free_t(trie);
-    fclose(fp);
-}
+//*|================================= TRENOVANI KORENU =================================|*//
 
 void create_dictionary(char *corpus_file_path) {
     char * line = NULL;
+    char *tmp;
     int level = 0;
     char str[20];
     char * word;
     size_t len = 0;
     ssize_t read;
     FILE *fp;       // File to read
-    FILE *fp2;      // File to write
+    FILE *fp_dictionary;      // File to write
 
-    // Open file
-    fp2 = fopen("/home/janelle/CLionProjects/sp_pc_2018/output/dictionary.txt", "w");
-    if (fp2 == NULL)
-    {
-        perror("Error opening file!");
-        exit(1);
-    }
-
-    // Open file
+    // Open file to read
     fp = fopen(corpus_file_path, "r");
     if (fp == NULL)
     {
-        perror("Error opening file!");
+        perror("ERROR: Invalid filename");
+        using();
+        exit(1);
+    }
+
+    // Open file to write
+    fp_dictionary = fopen(DICTIONARY, "w");
+    if (fp_dictionary == NULL)
+    {
+        perror("ERROR: Invalid filename");
+        using();
         exit(1);
     }
 
@@ -192,7 +143,14 @@ void create_dictionary(char *corpus_file_path) {
                 word = strtok (NULL, " ");
                 continue;
             }
-            insert(trie, word);
+
+            // Check string
+            tmp = strdup(word);
+            lower_string(tmp);
+            str_clean(tmp);
+
+            // Insert to TRIE
+            insert(trie, tmp);
             word = strtok (NULL, " ");
         }
     }
@@ -200,52 +158,10 @@ void create_dictionary(char *corpus_file_path) {
     if (line)
         free(line);
 
-    display(fp2, trie->root, str, level);
+    display(fp_dictionary, trie->root, str, level);
     fclose(fp);
-    fclose(fp2);
+    fclose(fp_dictionary);
     printf("Tries nodes count: %d\n", trie->count);
-}
-
-void find_stems(char *word_sequence, int msf_value) {
-    char* words;
-    words = strtok(word_sequence, " ");
-    while (words != NULL)
-    {
-        printf ("%s\n",words);
-        words = strtok (NULL, " ,.-");
-    }
-}
-
-int get_parameter_value(char *string) {
-    char delim[] = "=";
-    char *ptr = strtok(string, delim);
-    while (ptr != NULL)
-    {
-        if (match(ptr, "[0-9]+") == 1) {
-            return atoi(ptr);
-        }
-        ptr = strtok(NULL, delim);
-    }
-    return 0;
-}
-
-int match(char *string, char *pattern)
-{
-    regex_t re;
-    if (regcomp(&re, pattern, REG_EXTENDED|REG_NOSUB) != 0) return 0;
-    int status = regexec(&re, string, 0, NULL, 0);
-    regfree(&re);
-    if (status != 0) return 0;
-    return 1;
-}
-
-void create_stems_dictionary(int min_delka_korene) {
-
-    Trie *stems;
-
-    stems = trie_initialize();
-    compare_strings(head, min_delka_korene);
-    free_t(stems);
 }
 
 void create_words_array() {
@@ -256,7 +172,7 @@ void create_words_array() {
     FILE *fp;       // File to read
 
     // Open file
-    fp = fopen("/home/janelle/CLionProjects/sp_pc_2018/output/dictionary.txt", "r");
+    fp = fopen(DICTIONARY, "r");
     if (fp == NULL)
     {
         perror("Error opening file!");
@@ -302,6 +218,86 @@ void create_words_array() {
 
     fclose(fp);
 }
+
+void create_stems_dictionary(int min_delka_korene) {
+    FILE *fp;
+    Trie *stems;
+    int level = 0;
+    char str[20];
+
+    fp = fopen(STEMS, "w");
+    if (fp == NULL)
+    {
+        perror("Error opening file!");
+        exit(1);
+    }
+
+    stems = trie_initialize();
+
+    compare_strings(fp, stems, head, min_delka_korene);
+
+    display(fp, stems->root, str, level);
+    fclose(fp);
+    free_t(stems);
+}
+
+void compare_strings(FILE *fp, Trie* trie, List *head, int min_delka_korene) {
+    List * current = head;
+    List * next;
+    char *str;
+
+    while (current != NULL) {
+        next = head->next;
+        while (next != NULL) {
+            str = longest_common_substring(current->string, next->string);
+            if (strlen(str) >= min_delka_korene){
+                insert(trie, str);
+                //fprintf(fp, "[%s] [%s] = [%s]\n", current->string, next->string, longest_common_substring(current->string, next->string));
+            }
+            next = next->next;
+        }
+        if (current->next == NULL) break;
+        current = current->next;
+    }
+}
+
+/* |================================= URCOVANI KORENU ==================================| */
+
+void find_stems(char *word_sequence, int msf_value) {
+    char* words;
+    words = strtok(word_sequence, " ");
+    while (words != NULL)
+    {
+        printf ("%s\n",words);
+        words = strtok (NULL, " ,.-");
+    }
+}
+
+/* |======================================= MAIN ========================================| */
+int get_parameter_value(char *string) {
+    char delim[] = "=";
+    char *ptr = strtok(string, delim);
+    while (ptr != NULL)
+    {
+        if (match(ptr, "[0-9]+") == 1) {
+            return atoi(ptr);
+        }
+        ptr = strtok(NULL, delim);
+    }
+    return 0;
+}
+
+int match(char *string, char *pattern)
+{
+    regex_t re;
+    if (regcomp(&re, pattern, REG_EXTENDED|REG_NOSUB) != 0) return 0;
+    int status = regexec(&re, string, 0, NULL, 0);
+    regfree(&re);
+    if (status != 0) return 0;
+    return 1;
+}
+
+
 
 void using() {
     printf("+====================================================================================+\n");
