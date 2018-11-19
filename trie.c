@@ -1,4 +1,5 @@
 #include "trie.h"
+#include "lcs.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -54,7 +55,7 @@ void insert(Trie* trie, char* str)
 
     while (*str)
     {
-        index = (unsigned int) letter_to_int(*str);
+        index = (unsigned char) letter_to_int(*str);
         // create a new node if path doesn't exists
         if (curr->character[index] == NULL) {
             curr->character[index] = get_new_trie_node();
@@ -105,6 +106,44 @@ Word* search(Trie* trie, char* str)
         return curr;
     else
         return NULL;
+}
+
+char *MAX_STRING;
+char *find_stem(Word* root, char *word, char str[], int level, int msf_value)
+{
+    int i;
+    char *stem;
+
+    if (level == 0) {
+        MAX_STRING = "0";
+    }
+
+    if (root == NULL) {
+        perror("ERROR: cant display TRIE");
+        return "0";
+    }
+
+    // If node is leaf node -> display
+    if (!is_leaf(root))
+    {
+        str[level] = '\0';
+        stem = longest_common_substring(word, str);
+        if (strlen(stem) > 3 &&  root->count > msf_value) {
+            if (strlen(MAX_STRING) < strlen(stem)) MAX_STRING = stem;
+//            printf("%s -> %s %d\n", word, stem, root->count);
+        }
+    }
+
+    for (i = 0; i < ALPHA_SIZE; i++)
+    {
+        // if we found NOT NULL child, write it on string and call func recursively
+        if (root->character[i])
+        {
+            str[level] = i + 'a';
+            find_stem(root->character[i], word, str, level + 1, msf_value);
+        }
+    }
+    return MAX_STRING;
 }
 
 void display(FILE *fp, Word* root, char str[], int level)

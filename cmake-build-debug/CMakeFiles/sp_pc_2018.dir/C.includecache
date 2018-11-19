@@ -43,6 +43,8 @@ regex.h
 /home/janelle/Projects/kiv-pc/trie.c
 trie.h
 /home/janelle/Projects/kiv-pc/trie.h
+lcs.h
+/home/janelle/Projects/kiv-pc/lcs.h
 stdio.h
 -
 ctype.h

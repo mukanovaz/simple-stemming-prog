@@ -27,6 +27,7 @@ struct TrieNode
 };
 
 /* ========================================= FUNCTIONS ========================================= */
+Trie* trie_initialize();
 struct TrieNode* get_new_trie_node();
 void insert(Trie* trie, char* str);
 Word* search(Trie* trie, char* str);
@@ -34,10 +35,10 @@ void trie_free (Word* root);
 void free_t (Trie* trie);
 int is_leaf(Word* node);
 void display(FILE *fp, Word* root, char str[], int level);
-Trie* trie_initialize();
 void lower_string(char *s);
 void str_clean (char* src);
 void cz_key_map(int cz_chars[15]);
 int letter_to_int(char letter);
+char *find_stem(Word* root, char *word, char str[], int level, int msf_value);
 
 #endif //SP_PC_2018_TRIE_H

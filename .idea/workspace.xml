@@ -12,23 +12,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c22a300-a21c-48a5-afbe-65847da333d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/corpus-files/english.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LinkedList.c" beforeDir="false" afterPath="$PROJECT_DIR$/LinkedList.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LinkedList.h" beforeDir="false" afterPath="$PROJECT_DIR$/LinkedList.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/LinkedList.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/LinkedList.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/lcs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/lcs.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/trie.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sp_pc_2018.dir/trie.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sp_pc_2018" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sp_pc_2018" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpus-files/english.text" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lcs.c" beforeDir="false" afterPath="$PROJECT_DIR$/lcs.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lcs.h" beforeDir="false" afterPath="$PROJECT_DIR$/lcs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library.h" beforeDir="false" afterPath="$PROJECT_DIR$/library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/dictionary.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/stems.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/stems.dat" beforeDir="false" afterPath="$PROJECT_DIR$/output/stems.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trie.c" beforeDir="false" afterPath="$PROJECT_DIR$/trie.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trie.h" beforeDir="false" afterPath="$PROJECT_DIR$/trie.h" afterDir="false" />
     </list>
@@ -58,44 +57,48 @@
     <session id="194712224">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="c" value="37" />
+          <entry key="Makefile" value="1" />
+          <entry key="c" value="50" />
           <entry key="cpp" value="1" />
-          <entry key="dat" value="5" />
-          <entry key="h" value="34" />
-          <entry key="sp_pc_2018 (disassembly)" value="12" />
+          <entry key="dat" value="15" />
+          <entry key="h" value="43" />
+          <entry key="out" value="1" />
+          <entry key="sp_pc_2018 (disassembly)" value="13" />
           <entry key="text" value="1" />
-          <entry key="txt" value="25" />
+          <entry key="txt" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CMakeLists.txt" value="1" />
-          <entry key="Disassembly" value="12" />
-          <entry key="ObjectiveC" value="72" />
-          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="CMakeLists.txt" value="2" />
+          <entry key="Disassembly" value="13" />
+          <entry key="ObjectiveC" value="94" />
+          <entry key="PLAIN_TEXT" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="c" value="1881" />
-          <entry key="h" value="244" />
-          <entry key="txt" value="107" />
+          <entry key="Makefile" value="44" />
+          <entry key="c" value="2931" />
+          <entry key="dat" value="2" />
+          <entry key="h" value="277" />
+          <entry key="txt" value="108" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Doxygen file" value="1" />
-          <entry key="ObjectiveC" value="2124" />
-          <entry key="PLAIN_TEXT" value="107" />
+          <entry key="Doxygen file" value="2" />
+          <entry key="ObjectiveC" value="3206" />
+          <entry key="PLAIN_TEXT" value="154" />
         </counts>
       </usages-collector>
     </session>
@@ -105,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="63" />
+            <state relative-caret-position="301">
+              <caret line="145" column="21" lean-forward="true" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -114,38 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/corpus-files/english.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/output/stems.dat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1068">
-              <caret line="4134" column="7" lean-forward="true" selection-start-line="4134" selection-start-column="7" selection-end-line="4134" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output/dictionary.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="682" column="12" selection-start-line="682" selection-start-column="8" selection-end-line="682" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trie.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-530">
-              <caret line="70" column="1" lean-forward="true" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+            <state relative-caret-position="275">
+              <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -154,13 +130,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trie.h">
+        <entry file="file://$PROJECT_DIR$/output/dictionary.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="28" />
+            <state relative-caret-position="-9966">
+              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/corpus-files/dasenka_cili_zivot_stenete.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LinkedList.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="12" />
               <folding>
-                <element signature="e#53#81#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -169,36 +172,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>index</find>
-      <find>FILE</find>
-      <find>malloc</find>
-      <find>dis</find>
-      <find>display</find>
-      <find>compare_strings</find>
-      <find>current-&gt;next</find>
-      <find>ability</find>
-      <find>acco</find>
-      <find>aff</find>
-      <find>ago</find>
-      <find>abili</find>
-      <find>accompli</find>
-      <find>ample</find>
-      <find>arden</find>
-      <find>arrive</find>
-      <find>create_stems_dictionary</find>
-      <find>ation</find>
-      <find>get_</find>
-      <find>abstaine</find>
-      <find>accept</find>
-      <find>access</find>
-      <find>action</find>
-      <find>admit</find>
-      <find>wwwgutenbergorg</find>
       <find>break</find>
-      <find>sea</find>
       <find>ken</find>
       <find>kill</find>
       <find>ivel</find>
+      <find>sea</find>
+      <find>STEMS</find>
+      <find>strc</find>
+      <find>stems</find>
+      <find>quest</find>
+      <find>question</find>
+      <find>que</find>
+      <find>cie</find>
+      <find>choo</find>
+      <find>aged</find>
+      <find>damage</find>
+      <find>create_stems_dictionary</find>
+      <find>dama</find>
+      <find>rove</find>
+      <find>abil</find>
+      <find>strtok</find>
+      <find>[0] = strtok</find>
+      <find>acce</find>
+      <find>improved</find>
+      <find>find_max_string</find>
+      <find>prove</find>
+      <find>tati</find>
+      <find>abilit</find>
+      <find>create_words_array</find>
+      <find>destroy</find>
+      <find>insert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,18 +212,20 @@
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/corpus-files/english.text" />
-        <option value="$PROJECT_DIR$/trie.h" />
-        <option value="$PROJECT_DIR$/lcs.c" />
-        <option value="$PROJECT_DIR$/lcs.h" />
         <option value="$PROJECT_DIR$/LinkedList.c" />
         <option value="$PROJECT_DIR$/output/stems.txt" />
         <option value="$PROJECT_DIR$/LinkedList.h" />
         <option value="$PROJECT_DIR$/output/dictionary.txt" />
-        <option value="$PROJECT_DIR$/library.h" />
         <option value="$PROJECT_DIR$/corpus-files/english.txt" />
+        <option value="$PROJECT_DIR$/trie.h" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/lcs.h" />
+        <option value="$PROJECT_DIR$/lcs.c" />
+        <option value="$PROJECT_DIR$/library.h" />
         <option value="$PROJECT_DIR$/output/stems.dat" />
-        <option value="$PROJECT_DIR$/trie.c" />
         <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/trie.c" />
+        <option value="$PROJECT_DIR$/corpus-files/dasenka_cili_zivot_stenete.txt" />
       </list>
     </option>
   </component>
@@ -234,7 +239,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1366" />
     <option name="y" value="25" />
-    <option name="width" value="1910" />
+    <option name="width" value="1920" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -291,7 +296,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sp_pc_2018" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/corpus-files/english.txt " PASS_PARENT_ENVS_2="true" PROJECT_NAME="sp_pc_2018" TARGET_NAME="sp_pc_2018" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sp_pc_2018" RUN_TARGET_NAME="sp_pc_2018">
+    <configuration name="sp_pc_2018" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/corpus-files/dasenka_cili_zivot_stenete.txt -msl=5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sp_pc_2018" TARGET_NAME="sp_pc_2018" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sp_pc_2018" RUN_TARGET_NAME="sp_pc_2018">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -314,37 +319,39 @@
       <workItem from="1542141476526" duration="49000" />
       <workItem from="1542143257345" duration="535000" />
       <workItem from="1542179734031" duration="12641000" />
-      <workItem from="1542288740942" duration="19989000" />
+      <workItem from="1542288740942" duration="20601000" />
+      <workItem from="1542533858278" duration="12670000" />
+      <workItem from="1542636478259" duration="4057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33214000" />
+    <option name="totallyTimeSpent" value="50553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14194237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07257204" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29053319" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.07834603" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45593035" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.04461371" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.29162133" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.110990204" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3297062" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.43822077" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4994664" weight="0.3297062" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053364" side_tool="true" weight="0.3188248" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.3297062" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
+      <window_info anchor="right" id="Database" order="3" side_tool="true" weight="0.067769475" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14194237" />
@@ -378,29 +385,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/output/LinkedList.h" />
     <entry file="file://$PROJECT_DIR$/output/LinkedList.cpp" />
-    <entry file="file://$PROJECT_DIR$/test.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/corpus-files/dasenka_cili_zivot_stenete.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="140" selection-start-line="6" selection-start-column="139" selection-end-line="6" selection-end-column="140" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -415,40 +399,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lcs.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lcs.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/stems.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43906">
-          <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LinkedList.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/output/stems.txt" />
     <entry file="file://$PROJECT_DIR$/LinkedList.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -456,61 +407,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.c" />
     <entry file="file://$PROJECT_DIR$/corpus-files/english.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="152">
+          <caret line="740" column="54" selection-start-line="740" selection-start-column="40" selection-end-line="740" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/corpus-files/o_umeni_a_kulture_iii.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/trie.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="28" />
+        <state relative-caret-position="-1">
+          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
           <folding>
             <element signature="e#53#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trie.c">
+    <entry file="file://$PROJECT_DIR$/output/out.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-530">
-          <caret line="70" column="1" lean-forward="true" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        <state relative-caret-position="66">
+          <caret line="3" column="6" selection-start-line="3" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/english.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lcs.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lcs.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinkedList.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="12" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/output/dictionary.txt">
+    <entry file="file://$PROJECT_DIR$/library.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="682" column="12" selection-start-line="682" selection-start-column="8" selection-end-line="682" selection-end-column="12" />
+        <state relative-caret-position="264">
+          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output/stems.dat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1068">
-          <caret line="4134" column="7" lean-forward="true" selection-start-line="4134" selection-start-column="7" selection-end-line="4134" selection-end-column="7" />
+        <state relative-caret-position="264">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/dictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9966">
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corpus-files/dasenka_cili_zivot_stenete.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="145" column="21" lean-forward="true" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trie.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
