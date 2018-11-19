@@ -1,4 +1,5 @@
 #include "trie.h"
+#include "lcs.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -148,4 +149,47 @@ void str_clean_eng (char* src) {
         src++;
     }
     *dst = '\0';
+}
+
+char *MAX_STRING;
+char *find_stem(Word* root, char *word, char prefix[], int msf_value, int lvl)
+{
+    int i;
+    char *stem;
+
+    char tmp[strlen(prefix) + 2];
+
+    if (lvl == 0) {
+        MAX_STRING = "0";
+    }
+
+    if (root == NULL) {
+        perror("ERROR: cant display TRIE");
+        return "0";
+    }
+
+    // If node is leaf node -> display
+    if (!is_leaf(root))
+    {
+        stem = longest_common_substring(word, prefix);
+
+        if (strlen(stem) > 3 &&  root->count > msf_value) {
+            if (strlen(MAX_STRING) < strlen(stem)) {
+                MAX_STRING = strdup(stem);
+            }
+        }
+        free(stem);
+    }
+
+    for (i = 0; i < ALPHA_SIZE; i++)
+    {
+        // if we found NOT NULL child, write it on string and call func recursively
+        if (root->character[i])
+        {
+            sprintf(tmp, "%s%c", prefix, tolower(i));
+            find_stem(root->character[i], word, tmp, msf_value, lvl+1);
+        }
+    }
+
+    return MAX_STRING;
 }

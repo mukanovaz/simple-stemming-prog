@@ -18,6 +18,7 @@ CMakeFiles/sp_pc_2018.dir/main.c.o: ../main.c
 CMakeFiles/sp_pc_2018.dir/main.c.o: ../trie.h
 
 CMakeFiles/sp_pc_2018.dir/trie.c.o: ../LinkedList.h
+CMakeFiles/sp_pc_2018.dir/trie.c.o: ../lcs.h
 CMakeFiles/sp_pc_2018.dir/trie.c.o: ../trie.c
 CMakeFiles/sp_pc_2018.dir/trie.c.o: ../trie.h
 

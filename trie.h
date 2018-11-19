@@ -36,6 +36,6 @@ void free_t (Trie* trie);
 int is_leaf(Word* node);
 void str_clean_cz (char* src);
 void str_clean_eng (char* src);
-find_stem(Word *root, words, char prefix[], msf_value);
-
+//char *find_stem(Word* root, char *word, char str[], int level, int msf_value);
+char *find_stem(Word* root, char *word, char prefix[], int msf_value, int lvl);
 #endif //SP_PC_2018_TRIE_H

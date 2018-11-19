@@ -235,16 +235,16 @@ void compare_strings(FILE *fp, Trie* trie, List *head, int min_delka_korene) {
 
 void find_stems(char *word_sequence, int msf_value) {
     char* words;
-    int level = 0;
-    char str[20];
+    char *str;
 
     words = strtok(word_sequence, " ");
     while (words != NULL)
     {
-        printf("%s -> %s\n", words, find_stem(trie->root, words, str, level, msf_value));
+        str = find_stem(trie->root, words, "", msf_value, 0);
+        printf("%s -> %s\n", words, str);
         words = strtok (NULL, " ,.-");
+        free(str);
     }
-    free_t(trie);
 }
 
 void create_stems_dictionary(const char *filename) {
