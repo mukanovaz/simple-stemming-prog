@@ -30,15 +30,12 @@ struct TrieNode
 Trie* trie_initialize();
 struct TrieNode* get_new_trie_node();
 void insert(Trie* trie, char* str);
-Word* search(Trie* trie, char* str);
-void trie_free (Word* root);
+void display_trie(FILE *fp, Word *root, char prefix[]);
+void trie_free (Word *root);
 void free_t (Trie* trie);
 int is_leaf(Word* node);
-void display(FILE *fp, Word* root, char str[], int level);
-void lower_string(char *s);
-void str_clean (char* src);
-void cz_key_map(int cz_chars[15]);
-int letter_to_int(char letter);
-char *find_stem(Word* root, char *word, char str[], int level, int msf_value);
+void str_clean_cz (char* src);
+void str_clean_eng (char* src);
+find_stem(Word *root, words, char prefix[], msf_value);
 
 #endif //SP_PC_2018_TRIE_H

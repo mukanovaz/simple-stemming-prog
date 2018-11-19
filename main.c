@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
             printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
             printf("+====================================================================================+\n");
             create_dictionary(argv[1]);
-            create_words_array();
+            create_words_array(trie->root, "");
             create_stems_file(min_delka_korene);
             destroy(head);
             free_t(trie);
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
             printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
             printf("+====================================================================================+\n");
             create_dictionary(argv[1]);
-            create_words_array();
+            create_words_array(trie->root, "");
             create_stems_file(min_delka_korene);
             free_t(trie);
             destroy(head);
@@ -89,7 +89,6 @@ int main(int argc, char *argv[]) {
             free_t(trie);
         } else {
             using();
-            free_t(trie);
             return EXIT_FAILURE;
         }
     } else {
@@ -103,9 +102,7 @@ int main(int argc, char *argv[]) {
 
 void create_dictionary(char *corpus_file_path) {
     char * line = NULL;
-    char *tmp;
-    int level = 0;
-    char str[20];
+//    char *tmp;
     char * word;
     size_t len = 0;
     ssize_t read;
@@ -141,13 +138,8 @@ void create_dictionary(char *corpus_file_path) {
                 continue;
             }
 
-            // Check string
-            tmp = strdup(word);
-            lower_string(tmp);
-            str_clean(tmp);
-
             // Insert to TRIE
-            insert(trie, tmp);
+            insert(trie, word);
             word = strtok (NULL, " ");
         }
     }
@@ -155,29 +147,26 @@ void create_dictionary(char *corpus_file_path) {
     if (line)
         free(line);
 
-    display(fp_dictionary, trie->root, str, level);
-    //create_array(head, trie->root, str, level);
+    display_trie(fp_dictionary, trie->root, "");
     fclose(fp);
     fclose(fp_dictionary);
     printf("Tries nodes count: %d\n", trie->count);
 }
 
-void create_array(List *head, Word* root, char str[], int level)
-{
+void create_words_array(Word *root, char prefix[]) {
     int i;
+    char tmp[strlen(prefix) + 2];
 
-    if (root == NULL) {
-        perror("ERROR: cant display TRIE");
+    if (!root) {
         return;
     }
 
     // If node is leaf node -> display
     if (!is_leaf(root))
     {
-        str[level] = '\0';
         List *node = malloc(sizeof(List));
-        node->string = strdup(str);
-        node->next =NULL;
+        node->string = strdup(prefix);
+        node->next = NULL;
 
         if(head == NULL){
             current = head = node;
@@ -191,65 +180,10 @@ void create_array(List *head, Word* root, char str[], int level)
         // if we found NOT NULL child, write it on string and call func recursively
         if (root->character[i])
         {
-            str[level] = i + 'a';
-            create_array(head, root->character[i], str, level + 1);
+            sprintf(tmp, "%s%c", prefix, tolower(i));
+            create_words_array(root->character[i], tmp);
         }
     }
-}
-
-void create_words_array() {
-    char *line = NULL;
-    char *word;
-    size_t len = 0;
-    ssize_t read;
-    FILE *fp;       // File to read
-
-    // Open file
-    fp = fopen(DICTIONARY, "r");
-    if (fp == NULL)
-    {
-        perror("Error opening file!");
-        exit(1);
-    }
-
-    // read line by line
-    while ((read = getline(&line, &len, fp)) != EOF) {
-        // take words
-        word = strtok(line, " ");
-        while (word != NULL)
-        {
-            str_clean(word);
-
-            if (strcmp(word, "") == 0){
-                word = strtok (NULL, " ");
-                continue;
-            }
-            if (strcmp(word, "\n") == 0) {
-                word = strtok (NULL, " ");
-                continue;
-            }
-            if (numbers_only(word)) {
-                word = strtok (NULL, " ");
-                continue;
-            }
-
-            List *node = malloc(sizeof(List));
-            node->string = strdup(line);
-            node->next =NULL;
-
-            if(head == NULL){
-                current = head = node;
-            } else {
-                current = current->next = node;
-            }
-            word = strtok (NULL, " ");
-        }
-    }
-
-    if (line)
-        free(line);
-
-    fclose(fp);
 }
 
 void create_stems_file(int min_delka_korene) {
@@ -269,7 +203,7 @@ void create_stems_file(int min_delka_korene) {
 
     compare_strings(fp, stems, head, min_delka_korene);
 
-    display(fp, stems->root, str, level);
+    display_trie(fp, stems->root, "");
     fclose(fp);
     free_t(stems);
 }
@@ -288,6 +222,7 @@ void compare_strings(FILE *fp, Trie* trie, List *head, int min_delka_korene) {
                     insert(trie, str);
                     //fprintf(fp, "[%s] [%s] = [%s]\n", current->string, next->string, longest_common_substring(current->string, next->string));
                 }
+                free(str);
             }
             next = next->next;
         }
@@ -315,8 +250,6 @@ void find_stems(char *word_sequence, int msf_value) {
 void create_stems_dictionary(const char *filename) {
     char *line = NULL;
     char *word[3];
-    int level = 0;
-    char str[20];
     size_t len = 0;
     ssize_t read;
     FILE *fp;            // File to read
@@ -352,7 +285,7 @@ void create_stems_dictionary(const char *filename) {
     if (line)
         free(line);
 
-    display(fp2, trie->root, str, level);
+    display_trie(fp2, trie->root, "");
     fclose(fp);
 }
 

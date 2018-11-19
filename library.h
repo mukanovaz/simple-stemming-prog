@@ -18,7 +18,7 @@ int match(char *string, char *pattern);
 void create_dictionary(char *corpus_file_path);
 void create_stems_file(int min_delka_korene);
 void find_stems(char *word_sequence, int msf_value);
-void create_words_array();
+void create_words_array(Word *root, char prefix[]);
 void compare_strings(FILE *fp, Trie* trie, List *head, int max_delka_slova);
 int get_parameter_value(char *string);
 void create_stems_dictionary(const char *filename);

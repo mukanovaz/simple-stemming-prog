@@ -9,6 +9,7 @@ void destroy(List * list) {
     List * next = current->next;
     while(current != NULL){
         next = current->next;
+        free(current->string);
         free(current);
         current = next;
     }
