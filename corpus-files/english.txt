@@ -2671,7 +2671,7 @@ taught to do better.”
        *       *       *       *       *
 
 _Scrapping Metal and Scrapping Men._--Governor Foss of Massachusetts
-recently said: “Let me add in all seriousness that the managers of my
+recently said: “Let me insert_to_list in all seriousness that the managers of my
 own shops and factories make a more efficient and intelligent sorting
 and reclamation of scrap metal than the laws have generally made of the
 living men and women that have been thrown upon the scrap heap of our

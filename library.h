@@ -6,11 +6,11 @@
 
 const int  IMPLICITNI_MIN_DELKA_KORENE = 3;
 const int  IMPLICITNI_MIN_POCET_VYSKYTU_KORENE = 10;
-//const char *DICTIONARY = "output/dictionary.txt";
-//const char *STEMS = "output/stems.dat";
 
-const char *DICTIONARY = "/home/janelle/Projects/kiv-pc/output/dictionary.txt";
-const char *STEMS = "/home/janelle/Projects/kiv-pc/output/stems.dat";
+const char *DICTIONARY = "output/dictionary.txt";
+const char *STEMS = "stems.dat";
+//const char *DICTIONARY = "/home/janelle/Projects/kiv-pc/output/dictionary.txt";
+//const char *STEMS = "/home/janelle/Projects/kiv-pc/output/stems.dat";
 
 /* ========================================= FUNCTIONS ========================================= */
 void using();

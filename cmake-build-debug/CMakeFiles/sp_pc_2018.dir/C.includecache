@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/janelle/Projects/kiv-pc/LinkedList.h
-bits/types/FILE.h
--
 
 /home/janelle/Projects/kiv-pc/lcs.h
 trie.h
@@ -41,7 +39,7 @@ regex.h
 -
 
 /home/janelle/Projects/kiv-pc/trie.h
-bits/types/FILE.h
+stdio.h
 -
 LinkedList.h
 /home/janelle/Projects/kiv-pc/LinkedList.h

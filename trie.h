@@ -1,7 +1,7 @@
 #ifndef SP_PC_2018_TRIE_H
 #define SP_PC_2018_TRIE_H
 
-#include <bits/types/FILE.h>
+#include <stdio.h>
 #include "LinkedList.h"
 /* ========================================= CONSTANTS ========================================= */
 #define ALPHA_SIZE 256
@@ -36,6 +36,8 @@ void free_t (Trie* trie);
 int is_leaf(Word* node);
 void str_clean_cz (char* src);
 void str_clean_eng (char* src);
-//char *find_stem(Word* root, char *word, char str[], int level, int msf_value);
-char *find_stem(Word* root, char *word, char prefix[], int msf_value, int lvl);
+Word* search(Trie* trie, char* str);
+int count_characters (const char *word);
+void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_STR);
+char *find_longest_word (char *str);
 #endif //SP_PC_2018_TRIE_H

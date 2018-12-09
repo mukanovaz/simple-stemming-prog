@@ -3,9 +3,8 @@
 
 #include "trie.h"
 
-#define MIN(a,b) ((a) < (b) ? (a) : (b))
-
-int prefix_match(char *s1, char *s2, int len);
-char *longest_common_substring(char *a, char *b);
+int LCS_algorithm(char *s1, char *s2, char **longest_common_substring);
+void init_lcs_matrix(int s1_length, int s2_length);
+void destroy_lcs_matrix ();
 
 #endif //SP_PC_2018_LCS_H

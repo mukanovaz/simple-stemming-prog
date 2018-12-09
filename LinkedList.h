@@ -1,17 +1,21 @@
 #ifndef SP_PC_2018_LINKEDLIST_H
 #define SP_PC_2018_LINKEDLIST_H
 
-#include <bits/types/FILE.h>
+typedef struct node Node;
+typedef struct list List;
 
-
-struct LIST;
-typedef struct LIST List;
-
-struct LIST {
-    char *string;
-    struct LIST *next;
+struct node {
+    char *data;
+    struct node * next;
 };
 
+struct list {
+    Node * head;
+};
+
+List * make_list();
+Node * create_node(char *data);
+void insert_to_list(char *data, List *list);
 void destroy(List * list);
 
 #endif //SP_PC_2018_LINKEDLIST_H

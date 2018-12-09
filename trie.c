@@ -34,6 +34,7 @@ Word* get_new_trie_node()
     }
 
     node->isLeaf = 0;
+    node->count = 0;
 
     for (i = 0; i < ALPHA_SIZE; i++)
         node->character[i] = NULL;
@@ -47,12 +48,11 @@ void insert(Trie* trie, char* str) {
 
     curr = trie->root;
 
-    if (strlen(str) < 3) {
+    if (count_characters(str) < 3) {
         return;
     }
 
-//    str_clean_cz(str);
-    str_clean_eng(str);
+    str_clean_cz(str);
 
     while (*str) {
         index = (unsigned char) *str;
@@ -66,9 +66,36 @@ void insert(Trie* trie, char* str) {
         str++;
     }
 
-    trie->count++;
+
     curr->count++;
+    trie->count++;
     curr->isLeaf = trie->count; // leaf == (non zero)
+}
+
+Word* search(Trie* trie, char* str)
+{
+    int index;
+
+    // return 0 if Trie is empty
+    if (trie->root == NULL)
+        return NULL;
+
+    Word* curr = trie->root;
+    while (*str)
+    {
+        index = (unsigned char) *str;
+        // go to next node
+        curr = curr->character[index];
+
+        // if string is invalid (reached end of path in Trie)
+        if (curr == NULL)
+            return NULL;
+
+        // move to next character
+        str++;
+    }
+
+    return curr;
 }
 
 void display_trie(FILE *fp, Word *root, char prefix[]) {
@@ -82,7 +109,6 @@ void display_trie(FILE *fp, Word *root, char prefix[]) {
     // If node is leaf node -> display
     if (!is_leaf(root))
     {
-        //printf("%s %d\n", prefix, root->count);
         fprintf(fp, "%s %d\n", prefix, root->count);
     }
 
@@ -151,31 +177,25 @@ void str_clean_eng (char* src) {
     *dst = '\0';
 }
 
-char *MAX_STRING;
-char *find_stem(Word* root, char *word, char prefix[], int msf_value, int lvl)
+void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_STR)
 {
     int i;
     char *stem;
 
     char tmp[strlen(prefix) + 2];
 
-    if (lvl == 0) {
-        MAX_STRING = "0";
-    }
-
     if (root == NULL) {
         perror("ERROR: cant display TRIE");
-        return "0";
+        return;
     }
 
     // If node is leaf node -> display
     if (!is_leaf(root))
     {
-        stem = longest_common_substring(word, prefix);
-
-        if (strlen(stem) > 3 &&  root->count > msf_value) {
-            if (strlen(MAX_STRING) < strlen(stem)) {
-                MAX_STRING = strdup(stem);
+        LCS_algorithm(word, prefix, &stem);
+        if (strlen(stem) > 2 &&  root->count >= msf_value) {
+            if (strlen(MAX_STR) <= strlen(stem)) {
+                sprintf(MAX_STR, "%s %s", MAX_STR, stem);
             }
         }
         free(stem);
@@ -187,9 +207,71 @@ char *find_stem(Word* root, char *word, char prefix[], int msf_value, int lvl)
         if (root->character[i])
         {
             sprintf(tmp, "%s%c", prefix, tolower(i));
-            find_stem(root->character[i], word, tmp, msf_value, lvl+1);
+            find_stem(root->character[i], word, tmp, msf_value, MAX_STR);
+        }
+    }
+}
+
+int count_characters (const char *word) {
+    int count = 0;
+    int i = 0;
+
+    while (word[i] != '\0') {
+        count++;
+        i++;
+    }
+    return count;
+}
+
+char *find_longest_word (char *str) {
+
+    int i, j = 0, k = 0;
+    int len[15], min, max;
+
+    char str1[15][25];
+    char *result = (char*) malloc(1024);
+
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == 32)
+        {
+            str1[k][j] = '\0';
+            k++;
+            j = 0;
+        } else {
+            str1[k][j] = str[i];
+            j++;
         }
     }
 
-    return MAX_STRING;
+    str1[k][j] = '\0';
+
+    for (i = 0; i <= k; i++)
+    {
+        len[i] = strlen(str1[i]);
+    }
+
+    max = len[0];
+    min = len[0];
+
+    for (i = 1; i <= k; i++)
+    {
+        if (max < len[i])
+        {
+            max = len[i];
+        }
+        if (min > len[i])
+        {
+            min = len[i];
+        }
+    }
+
+    for (i = 0; i <= k; i++)
+    {
+        if (strlen(str1[i]) == max)
+        {
+            sprintf(result, "%s", str1[i]);
+            return result;
+        }
+    }
 }

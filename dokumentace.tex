@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{titlesec}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{titlepage}
+        \vspace*{-2cm}
+        {\centering\includegraphics[scale=1.0]{logo.pdf}\par}
+        \centering
+        \vspace*{2cm}
+        {\Large Semestrální práce z KIV/PC\par}
+        \vspace{1.5cm}
+        {\Huge\bfseries JEDNODUCHÝ STEMMER\par}
+        \vspace{2cm}
+
+        {\Large Mukanova Zhanel\par}
+        {\Large A16B0087P\par}
+        {\Large mukanova@students.zcu.cz\par}
+
+        \vfill
+
+        {\Large 21.\,12.\,2018}
+\end{titlepage}
+
+
+\section{Zadání}
+
+Naprogramujte v ANSI C přenositelnou konzolovou aplikaci, která bude pracovat jako tzv.
+\textbf{stemmer}. Stemmer je algoritmus, resp. program, který hledá kořeny slov. Stemmer pracuje ve
+dvou režimech: (i) v režimu učení, kdy je na vstupu velké množství textu (tzv. korpus) v jednom
+konkrétním etnickém jazyce (libovolném) a na výstupu pak slovník (seznam) kořenů slov; nebo
+(ii) v režimu zpracování slov, kdy je na vstupu slovo (nebo sekvence slov) a stemmer ke každému
+z nich určí jeho kořen.
+Celé zadání je na: \emph{https://www.kiv.zcu.cz/studies/predmety/pc/doc/work/sw2018-03.pdf}	
+
+\section{Analýza úlohy}
+Máme vytvořit program, který dokáže vytvořit frekvenèní slovník ze vstupního souboru. Dalším krokem program ze frekvenčního slovníku vytvoří slovník kořenů, podle kterého bude potom nachazet koreny zadaných slov.
+Ze zadání je jasné, že potřebujeme naimplementovat v ANSI C vhodnou datovou strukturu pro reprezentaci slovniku. Do které by se ukládaly slova a jejich pocet. Měla jsem na výběr následující datové struktury: 
+
+\begin{itemize}
+\item \textbf{Hash-table}\\
+Pokud bych chtěla pouze uložit slova a pak zkontrolovat, zda je mezi nimi hledané slovo nebo ne, pak by standardní hash tabulka byla rozumná volba. Pokud by počet položek seznamu byl znám předem, použila bych ideální hash pro dosažení nejvyššího výkonu a optimální velikosti uložených dat.
+\item \textbf{Stromy}\\
+	Prefix tree je vhodná datová struktura v pripade rychleho vyhledávání předpony slov, i když to může být trochu neefektivní z hlediska velikosti uložených souborů. Tato datová struktura také podporuje rychlé vkládání a odstraňování. Navíc Prefix tree má všechna slova seřazená podle abecedy, co v hash-tabulkách chybí.
+\item \textbf{Dalsi stromy}\\
+	Kdybychom chtěli použít slovník pro operace, jako je kontrola pravopisu, kde je potřebné najít slova, která nejsou podobná ostatním, je BK-strom skvělou volbou.
+\end{itemize}
+Další problém je porovnání každého slova slovníku s ostatními. Kvůli tomu ze iterační funkce v daných ADT jsou obvyklé rekurzivní, vhodnými datovými strukturami pro porovnání slovníku by byly:
+
+\begin{itemize}
+  \item \textbf{Obecné pole retezcu}\\
+Je vhodne kvuli snadnemu implementovani. Ale ma pomalou iterační funkci.
+  \item \textbf{Linked list}\\
+\end{itemize}
+
+Nasledujicim krokem programu je samotne porovnání slov.
+
+\begin{itemize}
+  \item \textbf{Longest Common Subsequence (LCS)}\\
+	LCS algoritmus je jedním ze způsobů jak posuzovat podobnost mezi dvěma řetězci. Ale neurčuje koreny, určuje jenom “společná pismena” slov.
+  \item \textbf{Longest Common Substring (LCS)}\\
+	 Algoritmus zváži všechny podřetězce prvního slova a pro každý podřetězec zkontroluje, zda existuje podřetězec ve druhém slove. Vyhledá podřetězec maximalni delky.
+\end{itemize}
+
+\section{Popis implementace}
+If you are wondering where your old default text is; it has been stored as a template. The template menu can be used to access and restore it. 
+
+\section{Uživatelská příručka}
+If you are wondering where your old default text is; it has been stored as a template. The template menu can be used to access and restore it. 
+
+\section{Závěr}
+If you are wondering where your old default text is; it has been stored as a template. The template menu can be used to access and restore it. 
+\end{document}
