@@ -7,6 +7,9 @@
 #include <assert.h>
 #include <regex.h>
 
+/*----------------------------------
+ * Vytvari novy Trie a allokuje pamet
+ *----------------------------------*/
 Trie* trie_initialize ()
 {
     Trie *trie = (Trie*) malloc (sizeof(Trie));
@@ -21,7 +24,9 @@ Trie* trie_initialize ()
     return trie;
 }
 
-// Function that returns a new Trie node
+/*----------------------------------
+ * Vytvari novy Trie node a allokuje pamet
+ *----------------------------------*/
 Word* get_new_trie_node()
 {
     int i;
@@ -42,6 +47,9 @@ Word* get_new_trie_node()
     return node;
 }
 
+/*----------------------------------
+ * Vklada novy Trie node do Trie
+ *----------------------------------*/
 void insert(Trie* trie, char* str) {
     Word *curr;
     int index;
@@ -72,6 +80,9 @@ void insert(Trie* trie, char* str) {
     curr->isLeaf = trie->count; // leaf == (non zero)
 }
 
+/*----------------------------------
+ * Hleda slovo v Trie
+ *----------------------------------*/
 Word* search(Trie* trie, char* str)
 {
     int index;
@@ -98,6 +109,9 @@ Word* search(Trie* trie, char* str)
     return curr;
 }
 
+/*----------------------------------
+ * Zapisuje cely Trie do souboru
+ *----------------------------------*/
 void display_trie(FILE *fp, Word *root, char prefix[]) {
     int i;
     char tmp[strlen(prefix) + 2];
@@ -123,6 +137,9 @@ void display_trie(FILE *fp, Word *root, char prefix[]) {
     }
 }
 
+/*----------------------------------
+ * Zjisti zda uzel je posledni
+ *----------------------------------*/
 int is_leaf(Word* node) {
     if (node->isLeaf != 0) {
         return 0;
@@ -130,8 +147,10 @@ int is_leaf(Word* node) {
         return 1;
 }
 
+/*----------------------------------
+ * Rekurzivni funkce pro uvolneni kazdeho slova
+ *----------------------------------*/
 void trie_free (Word *root) {
-
     int i;
 
     for (i= 0; i < ALPHA_SIZE; ++i) {
@@ -142,6 +161,9 @@ void trie_free (Word *root) {
     free (root);
 }
 
+/*----------------------------------
+ * Uvolneni Trie
+ *----------------------------------*/
 void free_t (Trie* trie) {
     if (trie) {
         if (trie->root) {
@@ -151,6 +173,9 @@ void free_t (Trie* trie) {
     }
 }
 
+/*----------------------------------
+ * Nechava v retezci jenom pismena
+ *----------------------------------*/
 void str_clean_cz (char* src) {
     char *dst = src;
 
@@ -164,6 +189,9 @@ void str_clean_cz (char* src) {
     *dst = '\0';
 }
 
+/*----------------------------------
+ * Nechava v retezci jenom pismena
+ *----------------------------------*/
 void str_clean_eng (char* src) {
     char *dst = src;
 
@@ -177,10 +205,14 @@ void str_clean_eng (char* src) {
     *dst = '\0';
 }
 
-void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_STR)
+/*----------------------------------
+ * Rekurzivni funkce pro porovnani slova se slovnikem korenu
+ *----------------------------------*/
+void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_STR, size_t stemSize)
 {
     int i;
-    char *stem;
+    char mystem[100];
+    size_t akt = 0;
 
     char tmp[strlen(prefix) + 2];
 
@@ -192,13 +224,16 @@ void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_S
     // If node is leaf node -> display
     if (!is_leaf(root))
     {
-        LCS_algorithm(word, prefix, &stem);
-        if (strlen(stem) > 2 &&  root->count >= msf_value) {
-            if (strlen(MAX_STR) <= strlen(stem)) {
-                sprintf(MAX_STR, "%s %s", MAX_STR, stem);
+        if(strstr(word,prefix)!= NULL) {
+            akt = strlen(prefix);
+            if(stemSize < akt){
+                stemSize = akt;
+                memcpy(mystem, prefix, stemSize);
+                mystem[stemSize] = '\0';
+                sprintf(MAX_STR, "%s", mystem);
             }
+
         }
-        free(stem);
     }
 
     for (i = 0; i < ALPHA_SIZE; i++)
@@ -206,12 +241,16 @@ void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_S
         // if we found NOT NULL child, write it on string and call func recursively
         if (root->character[i])
         {
+            stemSize = strlen(MAX_STR);
             sprintf(tmp, "%s%c", prefix, tolower(i));
-            find_stem(root->character[i], word, tmp, msf_value, MAX_STR);
+            find_stem(root->character[i], word, tmp, msf_value, MAX_STR, stemSize);
         }
     }
 }
 
+/*----------------------------------
+ * Vrati pocet pismen v retezci
+ *----------------------------------*/
 int count_characters (const char *word) {
     int count = 0;
     int i = 0;
@@ -223,6 +262,9 @@ int count_characters (const char *word) {
     return count;
 }
 
+/*----------------------------------
+ * Najde v retezci mejdelsi slovo
+ *----------------------------------*/
 char *find_longest_word (char *str) {
 
     int i, j = 0, k = 0;

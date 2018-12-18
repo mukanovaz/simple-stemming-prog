@@ -28,7 +28,7 @@ struct TrieNode
 
 /* ========================================= FUNCTIONS ========================================= */
 Trie* trie_initialize();
-struct TrieNode* get_new_trie_node();
+Word* get_new_trie_node();
 void insert(Trie* trie, char* str);
 void display_trie(FILE *fp, Word *root, char prefix[]);
 void trie_free (Word *root);
@@ -38,6 +38,7 @@ void str_clean_cz (char* src);
 void str_clean_eng (char* src);
 Word* search(Trie* trie, char* str);
 int count_characters (const char *word);
-void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_STR);
+void find_stem(Word* root, char *word, char prefix[], int msf_value, char *MAX_STR, size_t stemSize);
+
 char *find_longest_word (char *str);
 #endif //SP_PC_2018_TRIE_H

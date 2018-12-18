@@ -1,0 +1,4 @@
+/home/janelle/programs/clion-2018.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/janelle/Projects/kiv-pc
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/janelle/Projects/kiv-pc/cmake-build-debug

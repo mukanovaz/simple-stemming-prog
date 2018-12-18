@@ -3,6 +3,7 @@
 
 #include "trie.h"
 
+/* ========================================= FUNCTIONS ========================================= */
 int LCS_algorithm(char *s1, char *s2, char **longest_common_substring);
 void init_lcs_matrix(int s1_length, int s2_length);
 void destroy_lcs_matrix ();

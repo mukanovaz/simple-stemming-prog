@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/janelle/Projects/kiv-pc/LinkedList.h
+
+/home/janelle/Projects/kiv-pc/lcs.h
+trie.h
+/home/janelle/Projects/kiv-pc/trie.h
+
+/home/janelle/Projects/kiv-pc/library.h
+trie.h
+/home/janelle/Projects/kiv-pc/trie.h
+
+/home/janelle/Projects/kiv-pc/main.c
+library.h
+/home/janelle/Projects/kiv-pc/library.h
+trie.h
+/home/janelle/Projects/kiv-pc/trie.h
+LinkedList.h
+/home/janelle/Projects/kiv-pc/LinkedList.h
+lcs.h
+/home/janelle/Projects/kiv-pc/lcs.h
+stdio.h
+-
+ctype.h
+-
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+regex.h
+-
+
+/home/janelle/Projects/kiv-pc/trie.h
+stdio.h
+-
+LinkedList.h
+/home/janelle/Projects/kiv-pc/LinkedList.h
+

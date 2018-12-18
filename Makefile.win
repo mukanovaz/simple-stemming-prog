@@ -1,0 +1,12 @@
+CC       = gcc.exe -D__DEBUG__
+OBJ      = main.o trie.o LinkedList.o lcs.o
+BIN      = sistem.exe
+RM       = rm.exe -f
+
+all: all-before sistem all-after
+
+sistem: main.c trie.c LinkedList.c lcs.c
+	$(CC) -c main.c trie.c LinkedList.c lcs.c -o $(BIN)
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)

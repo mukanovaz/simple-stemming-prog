@@ -1,9 +1,11 @@
 #ifndef SP_PC_2018_LINKEDLIST_H
 #define SP_PC_2018_LINKEDLIST_H
 
+/* ========================================= TYPEDEFS ==========================================*/
 typedef struct node Node;
 typedef struct list List;
 
+/* ========================================= STRUCTURES ======================================== */
 struct node {
     char *data;
     struct node * next;
@@ -13,6 +15,7 @@ struct list {
     Node * head;
 };
 
+/* ========================================= FUNCTIONS ========================================= */
 List * make_list();
 Node * create_node(char *data);
 void insert_to_list(char *data, List *list);

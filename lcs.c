@@ -7,12 +7,14 @@ static int **lcs_matrix;
 static int lcs_matrix_rows = 0;
 static int lcs_matrix_collumns = 0;
 
-
+/*----------------------------------
+ * Inicializace matici
+ *----------------------------------*/
 void init_lcs_matrix(int a_length, int b_length){
     if (a_length+1 > lcs_matrix_rows || b_length+1 > lcs_matrix_collumns){
         destroy_lcs_matrix();
 
-        // alocate new matrix
+        // allocace matici
         lcs_matrix = (int **)malloc((a_length+1) * sizeof(int*));
         for (int i = 0; i < a_length+1; i++)
             lcs_matrix[i] = (int *)malloc((b_length+1) * sizeof(int));
@@ -27,7 +29,9 @@ void init_lcs_matrix(int a_length, int b_length){
         lcs_matrix[a_length][j] = 0;
 }
 
-
+/*----------------------------------
+ * LCS (longest common substring) algoritmus
+ *----------------------------------*/
 int LCS_algorithm(char *a, char *b, char **longest_common_substring){
     int a_length = strlen(a);
     int b_length = strlen(b);
@@ -60,6 +64,9 @@ int LCS_algorithm(char *a, char *b, char **longest_common_substring){
     return max_len;
 }
 
+/*----------------------------------
+ * Uvolneni matici
+ *----------------------------------*/
 void destroy_lcs_matrix () {
     for (int i = 0; i < lcs_matrix_rows; i++)
         free(lcs_matrix[i]);

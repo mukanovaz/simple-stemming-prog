@@ -9,9 +9,6 @@
 #include <assert.h>
 #include <regex.h>
 
-// /home/janelle/Projects/kiv-pc/corpus-files/dasenka_cili_zivot_stenete.txt -msl=5
-// "rehabilitating accessible improved ahoj" -msf=20
-
 /* Global variables */
 int min_delka_korene;
 int min_pocet_vyskytu_korenu;
@@ -31,14 +28,7 @@ int main(int argc, char *argv[]) {
         /* UCENI STEMMERU */
         if (match(argv[1], file_path_regrex) == 1) {
             // Nastaveni parametru -msl=3
-            printf("%s \nDefault -msl=3\n", argv[1]);
             min_delka_korene = IMPLICITNI_MIN_DELKA_KORENE;
-            printf("+====================================================================================+\n");
-            printf("|================================= TRENOVANI KORENU =================================|\n");
-            printf("|====================================================================================|\n");
-            printf(" [*] Path to corpus-file: %s    \n", argv[1]);
-            printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
-            printf("+====================================================================================+\n");
 
             create_dictionary(argv[1]);
             create_words_array(trie->root, "");
@@ -46,15 +36,8 @@ int main(int argc, char *argv[]) {
             destroy(list);
             free_t(trie);
         } else {                                    /* URCENI KORENU */
-            printf("%s \nDefault -msf=10\n", argv[1]);
             // Nastaveni parametru -msf=10
             min_pocet_vyskytu_korenu = IMPLICITNI_MIN_POCET_VYSKYTU_KORENE;
-            printf("+====================================================================================+\n");
-            printf("|================================= URCOVANI KORENU ==================================|\n");
-            printf("|====================================================================================|\n");
-            printf(" [*] Path to corpus-file: %s    \n", argv[1]);
-            printf(" [*] Minimum Stem Frequency: %d \n", min_pocet_vyskytu_korenu);
-            printf("+====================================================================================+\n");
             create_stems_dictionary(STEMS);
             find_stems(argv[1], min_pocet_vyskytu_korenu);
             destroy(list);
@@ -63,12 +46,6 @@ int main(int argc, char *argv[]) {
     } else if (argc == 3) {
         if (match(argv[2], "-(msl)=[1-9]+") == 1) {
             min_delka_korene = get_parameter_value(argv[2]);
-            printf("+====================================================================================+\n");
-            printf("|================================= TRENOVANI KORENU =================================|\n");
-            printf("|====================================================================================|\n");
-            printf(" [*] Path to corpus-file: %s    \n", argv[1]);
-            printf(" [*] Minimum Stem Length: %d    \n", min_delka_korene);
-            printf("+====================================================================================+\n");
 
             create_dictionary(argv[1]);
             create_words_array(trie->root, "");
@@ -78,12 +55,6 @@ int main(int argc, char *argv[]) {
         } else if (match(argv[2], "-(msf)=[1-9]+")) {
             // Nastaveni parametru -msf=10
             min_pocet_vyskytu_korenu = get_parameter_value(argv[2]);
-            printf("+====================================================================================+\n");
-            printf("|================================= URCOVANI KORENU ==================================|\n");
-            printf("|====================================================================================|\n");
-            printf(" [*] Path to corpus-file: %s    \n", argv[1]);
-            printf(" [*] Minimum Stem Frequency: %d \n", min_pocet_vyskytu_korenu);
-            printf("+====================================================================================+\n");
             if (match(argv[1], file_path_regrex) != 1) {
                 create_stems_dictionary(STEMS);
                 find_stems(argv[1], min_pocet_vyskytu_korenu);
@@ -164,7 +135,7 @@ void create_dictionary(char *corpus_file_path) {
     display_trie(fp_dictionary, trie->root, "");
     fclose(fp);
     fclose(fp_dictionary);
-    printf("Tries nodes count: %d\n", trie->count);
+    //printf("Tries nodes count: %d\n", trie->count);
 }
 
 void create_words_array(Word *root, char prefix[]) {
@@ -215,7 +186,6 @@ void create_stems_file(int min_delka_korene) {
 
 void compare_strings(FILE *fp, Trie* stems, List *head, int min_delka_korene) {
     char *str;
-    int exist_stem;
 
     Node *current = list->head;
     Node *next;
@@ -224,7 +194,6 @@ void compare_strings(FILE *fp, Trie* stems, List *head, int min_delka_korene) {
 
     for(; current != NULL; current = current->next) {
         next = current->next;
-        exist_stem = 0;
 
         for(; next != NULL; next = next->next) {
             char *s1 = current->data;
@@ -234,14 +203,10 @@ void compare_strings(FILE *fp, Trie* stems, List *head, int min_delka_korene) {
                 LCS_algorithm(current->data, next->data, &str);
                 if (strlen(str) >= min_delka_korene){
                     insert(stems, str);
-                    exist_stem = 1;
                 }
                 free(str);
             }
         }
-
-        if (exist_stem == 0)
-            insert(stems, current->data);
     }
     destroy_lcs_matrix();
 }
@@ -257,7 +222,7 @@ void find_stems(char *word_sequence, int msf_value) {
     while (words != NULL)
     {
         sprintf(str, "");
-        find_stem(trie->root, words, "", msf_value, str);
+        find_stem(trie->root, words, "", msf_value, str, 0);
         max_str = find_longest_word(str);
 
         if (strlen(max_str) == 0) {
@@ -331,25 +296,16 @@ int match(char *string, char *pattern)
     return 1;
 }
 
-int numbers_only(const char *s)
-{
-    while (*s) {
-        if (isdigit(*s++) == 0) return 0;
-    }
-    return 1;
-}
-
 void using() {
     printf("+====================================================================================+\n");
-    printf("| sistem.exe corpus-file | \"word-sequence\" [-msl=celé císlo] [-msf=celé císlo]       |\n");
+    printf("| sistem.exe corpus-file | \"word-sequence\" [-msl=celé císlo] [-msf=celé císlo]     |\n");
     printf("| ---------------------------------------------------------------------------------- |\n");
     printf("| [*] sistem.exe                 nazev programu                                      |\n");
     printf("| ---------------------------------------------------------------------------------- |\n");
     printf("| [*] corpus-file                cesta k souboru (default pripona .txt)              |\n");
     printf("| [*] -msl <cele cislo>          minimalni delka korene slova                        |\n");
     printf("| ---------------------------------------------------------------------------------- |\n");
-    printf("| [*] [\"]word-sequence[\"]        slovo nebo sekvenci slov                            |\n");
+    printf("| [*] [\"]word-sequence[\"]        slovo nebo sekvenci slov                          |\n");
     printf("| [*] -msf <cele cislo>          minimalni pocet vyskytu prislusneho korene          |\n");
     printf("+====================================================================================+\n");
 }
-

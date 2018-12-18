@@ -5,6 +5,9 @@
 #include "lcs.h"
 #include "trie.h"
 
+/*----------------------------------
+ * Vytvari novy node a allokuje pamet
+ *----------------------------------*/
 Node * create_node(char *data){
     Node * newNode = malloc(sizeof(Node));
     if (!newNode) {
@@ -15,6 +18,9 @@ Node * create_node(char *data){
     return newNode;
 }
 
+/*----------------------------------
+ * Vytvari novy LinkedList a allokuje pamet
+ *----------------------------------*/
 List * make_list(){
     List * list = malloc(sizeof(List));
     if (!list) {
@@ -24,6 +30,9 @@ List * make_list(){
     return list;
 }
 
+/*----------------------------------
+ * Vklada prvek do LinkedListu
+ *----------------------------------*/
 void insert_to_list(char *data, List *list){
     Node * current = NULL;
     if(list->head == NULL){
@@ -38,6 +47,9 @@ void insert_to_list(char *data, List *list){
     }
 }
 
+/*----------------------------------
+ * Uvolnuje cely LinkedList
+ *----------------------------------*/
 void destroy(List * list){
     Node * current = list->head;
     Node * next = current;

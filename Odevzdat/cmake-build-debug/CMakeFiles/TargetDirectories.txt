@@ -1,0 +1,3 @@
+/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/janelle/Projects/kiv-pc/cmake-build-debug/CMakeFiles/sp_pc_2018.dir
